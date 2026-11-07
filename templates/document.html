@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 id="doc-title">Loading Document...</h2>
+        <div style="text-align: right;">
+            <span style="color: #94a3b8; font-size: 0.9rem;">Version: <span id="doc-version">-</span></span><br>
+            <span style="color: #10b981; font-size: 0.9rem;" id="save-status"></span>
+        </div>
+    </div>
+
+    <textarea id="doc-content" class="form-control" style="height: 300px; resize: vertical; font-family: monospace; line-height: 1.5;" placeholder="Start typing your document here..."></textarea>
+
+    <button id="save-btn" class="btn" style="margin-top: 1rem;">Save Document</button>
+    <a href="/dashboard" style="display: block; text-align: center; margin-top: 1rem; color: #3b82f6; text-decoration: none;">← Back to Dashboard</a>
+</div>
+
+<script src="{{ url_for('static', filename='js/documents.js') }}"></script>
+{% endblock %}

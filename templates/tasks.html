@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+    <h2>Task Board</h2>
+    <button id="btn-new-task" class="btn" style="width: auto;">+ New Task</button>
+</div>
+
+<!-- Create Task Form (Hidden by default) -->
+<div id="new-task-form" class="card" style="display: none; margin-bottom: 2rem;">
+    <h3>Create a Task</h3>
+    <div class="form-group">
+        <label>Task Title</label>
+        <input type="text" id="task-title" class="form-control" placeholder="What needs to be done?">
+    </div>
+    <div class="form-group">
+        <label>Priority</label>
+        <select id="task-priority" class="form-control">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+            <option value="Critical">Critical</option>
+        </select>
+    </div>
+    <button id="save-task-btn" class="btn">Save Task</button>
+</div>
+
+<!-- Task List -->
+<div id="task-list" style="display: grid; gap: 1rem;">
+    <!-- Tasks will be injected here by JavaScript -->
+</div>
+
+<script src="{{ url_for('static', filename='js/tasks.js') }}"></script>
+{% endblock %}
